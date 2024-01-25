@@ -17,14 +17,9 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.keycloak.quickstarts</groupId>
-        <artifactId>keycloak-quickstart-parent</artifactId>
-        <version>23.0.4</version>
-        <relativePath>../../pom.xml</relativePath>
-    </parent>
-
-    <artifactId>spring-rest-authz-resource-server</artifactId>
+    <groupId>org.mc.mciammanger</groupId>
+    <artifactId>mciammanger-spring</artifactId>
+    <version>0.1</version>
     <packaging>jar</packaging>
 
     <licenses>
@@ -68,33 +63,15 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-policy-enforcer</artifactId>
+            <version>23.0.4</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.keycloak/keycloak-core -->
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-core</artifactId>
+            <version>23.0.4</version>
         </dependency>
 
-        <!-- Test Dependencies -->
-        <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-admin-client</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-test-helper</artifactId>
-            <scope>test</scope>
-        </dependency>
 
     </dependencies>
 
@@ -103,6 +80,15 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
