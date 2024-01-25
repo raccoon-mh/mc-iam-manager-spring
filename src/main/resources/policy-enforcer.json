@@ -1,0 +1,8 @@
+{
+  "realm": "RELAMID",
+  "auth-server-url": "https://KEYCLOAKHOST/",
+  "resource": "CLIENTID",
+  "credentials": {
+    "secret": "CLIENT_Secret"
+  }
+}
