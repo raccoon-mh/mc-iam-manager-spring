@@ -20,7 +20,7 @@
     <groupId>org.mc.mciammanger</groupId>
     <artifactId>mciammanger-spring</artifactId>
     <version>0.1</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <licenses>
         <license>
@@ -61,6 +61,11 @@
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-policy-enforcer</artifactId>
             <version>23.0.4</version>
@@ -82,11 +87,16 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.8.1</version> <!-- 최신 버전으로 변경 -->
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>17</source> <!-- 사용하려는 Java 소스 버전 -->
+                    <target>17</target> <!-- 컴파일된 클래스 파일의 Java 대상 버전 -->
                 </configuration>
             </plugin>
         </plugins>

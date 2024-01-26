@@ -28,9 +28,9 @@ public class OAuth2ResourceServerController {
 
 	@RequestMapping("/**")
 	public String index(HttpServletRequest request, @AuthenticationPrincipal Jwt jwt) {
-		System.out.println("Method : " + request.getMethod());
-		System.out.println("URI : " + request.getRequestURI());
-		System.out.println("preferred_username : " + jwt.getClaimAsString("preferred_username"));
+		System.out.println("Method\t\t: " + request.getMethod());
+		System.out.println("URI\t\t: " + request.getRequestURI());
+		System.out.println("username\t: " + jwt.getClaimAsString("preferred_username"));
 		return String.format("{\"status\" : \"ok\"}");
 	}
 
