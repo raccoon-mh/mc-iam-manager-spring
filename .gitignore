@@ -1,3 +1,5 @@
 test.md
 src/main/resources/*
 target/*
+src/main/resources/application.yml
+src/main/resources/policy-enforcer.json

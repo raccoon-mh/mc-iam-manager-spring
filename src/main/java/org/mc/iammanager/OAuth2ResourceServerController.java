@@ -19,30 +19,19 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.RestController;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-
 
 @RestController
 public class OAuth2ResourceServerController {
 
-	@GetMapping("/**")
+	@RequestMapping("/**")
 	public String index(HttpServletRequest request, @AuthenticationPrincipal Jwt jwt) {
-		// System.out.println("Method : " + request.getMethod());
+		System.out.println("Method : " + request.getMethod());
 		System.out.println("URI : " + request.getRequestURI());
 		System.out.println("preferred_username : " + jwt.getClaimAsString("preferred_username"));
-		System.out.println("clientAddress : " + jwt.getClaimAsString("clientAddress"));
-		return String.format("Hello, %s!", jwt.getClaimAsString("preferred_username"));
-	}
-
-	@PostMapping("/**")
-	public String indexPost(HttpServletRequest request, @AuthenticationPrincipal Jwt jwt) {
-		// System.out.println("Method : " + request.getMethod());
-		System.out.println("URI : " + request.getRequestURI());
-		System.out.println("preferred_username : " + jwt.getClaimAsString("preferred_username"));
-		System.out.println("clientAddress : " + jwt.getClaimAsString("clientAddress"));
-		return String.format("Hello, %s!", jwt.getClaimAsString("preferred_username"));
+		return String.format("{\"status\" : \"ok\"}");
 	}
 
 }
